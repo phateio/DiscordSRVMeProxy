@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'net.minecrell.plugin-yml.bukkit' version '0.4.0'
+}
+
+group = 'io.github.phateio'
+version = '1.0-SNAPSHOT'
+
+bukkit {
+    name = 'DiscordSRVMeProxy'
+    version = project.version
+    main = 'io.github.phateio.discordsrvmeproxy.DiscordSRVMeProxy'
+    apiVersion = '1.13'
+    author = "WhiteCat"
+    depend = ["DiscordSRV"]
+
+    commands {
+        me {
+            description = "It's me"
+        }
+    }
+}
+
+sourceCompatibility = '16'
+targetCompatibility = '16'
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven {
+        name = 'papermc-repo'
+        url = 'https://papermc.io/repo/repository/maven-public/'
+    }
+    maven {
+        name = 'sonatype'
+        url = 'https://oss.sonatype.org/content/groups/public/'
+    }
+    maven {
+        url = 'https://nexus.scarsz.me/content/groups/public/'
+    }
+}
+
+dependencies {
+    compileOnly 'io.papermc.paper:paper-api:1.17-R0.1-SNAPSHOT'
+    compileOnly 'com.discordsrv:discordsrv:1.18.4'
+    compileOnly files("libs/NewLM-8.2.0.jar")
+}
