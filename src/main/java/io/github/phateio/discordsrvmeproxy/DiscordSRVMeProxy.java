@@ -42,7 +42,7 @@ public final class DiscordSRVMeProxy extends JavaPlugin {
         String msg = String.join(" ", args);
         //noinspection deprecation
         getServer().broadcastMessage(
-                mc_format.replace("{plyaer}", sender.getName())
+                mc_format.replace("{player}", sender.getName())
                         .replace("{message}", msg)
         );
         TextChannel ch = srv.getMainTextChannel();
