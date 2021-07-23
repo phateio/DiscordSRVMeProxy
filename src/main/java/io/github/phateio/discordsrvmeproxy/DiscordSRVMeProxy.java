@@ -48,7 +48,7 @@ public final class DiscordSRVMeProxy extends JavaPlugin {
         TextChannel ch = srv.getMainTextChannel();
         if (ch == null) return true;
         ch.sendMessage(
-                discord_format.replace("{player}", sender.getName())
+                discord_format.replace("{player}", DiscordUtil.escapeMarkdown(sender.getName()))
                         .replace("{message}", DiscordUtil.escapeMarkdown(msg))
         ).queue();
         return true;
